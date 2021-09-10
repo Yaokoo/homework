@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--两种自动给引用数据类型赋值的方法
+    1.byname 要求被赋值对象id和java属性名相同
+    2.byType 类型自动匹配   1.类型相同 2.继承关系  继承会继承所有的属性 以及puc 和prot修饰的方法 3.接口实现关系
+    -->
+    <bean id="student" class="com.ba04.Student" autowire="byName">
+        <property name="name" value="qq"/>
+        <property name="age" value="19"/>
+    </bean>
+    <bean id="school" class="com.ba04.School">
+        <property name="name" value="清华大学"/>
+        <property name="address" value="北京市海淀区"/>
+    </bean>
+</beans>
